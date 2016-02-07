@@ -20,10 +20,10 @@ namespace lecture1
 
         static int Search(DirectoryInfo d)
         {
-            FileInfo files[] = d.GetFiles();
-            int cnt_files = d.GetFiles().Lenght;
+            FileInfo[] files = d.GetFiles();
+            int cnt_files = d.GetFiles().Length;
 
-            DirectoryInfo[] dectories = d.GetDirectories(); 
+            DirectoryInfo[] directories  = d.GetDirectories(); 
             foreach(DirectoryInfo directory in directories)
             {
                 cnt_files += Search(directory);

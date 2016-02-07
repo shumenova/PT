@@ -17,7 +17,7 @@ namespace lab1
         }
         public static Complex operator + (Complex c1, Complex c2)
         {
-            Complex.sum = new Complex(c1.a + c2.a, c1.b + c2.b);
+            Complex sum = new Complex(c1.a + c2.a, c1.b + c2.b);
             return sum; 
         }
         public override string ToString()
@@ -35,8 +35,12 @@ namespace lab1
             num3 = Int32.Parse(Console.ReadLine());
             num4 = Int32.Parse(Console.ReadLine());
             Complex complex_1 = new Complex(num1, num2);
-            Complex complex_2 = new Complex(num1, num2);
+            Complex complex_2 = new Complex(num3, num4);
             Complex sum = complex_1 + complex_2;
+
+            Console.WriteLine(sum);
+
+            Console.ReadKey();
 
         }
     }

@@ -8,32 +8,41 @@ namespace lab1._1
 {
     class Program
     {
+        static bool isPrime(int s) // принимаем значение 
+        {
+            int cnt = 0; // создаем счетчик
+            for(int j=2; j<= Math.Sqrt(s); j++) // ппробегаемся 
+            {
+                if(s%j==0) // условие 
+                {
+                    cnt++; // продолжение условия
+                }
+            }
+            return (cnt == 0) && (s != 1); // возвращаем результат 
+        }
         static void Main(string[] args)
         {
-            bool prime = true;
-            int x;
-            x = Int16.Parse(Console.ReadLine());
-            for (int i = 2; i <= 2; i++)
+            string enterDigit = Console.ReadLine(); // считываем число
+            string[] enteredDigitArray = enterDigit.Split(' '); // создаем массив
+            int arrLenght = enteredDigitArray.Length; // узнаем размер массива 
+            for(int i =0; i < arrLenght; i++) // пробегаемся по массиву
             {
-                if (x % i == 0)
+                string strElement = enteredDigitArray[i];  // записываем число
+                int enterSingle = Int32.Parse(strElement); // переводим число
+                bool prime = isPrime(enterSingle); //  передаем значение
+                if (prime) // создаем условие 
                 {
-                    prime = false;
-                    break;
-                }
-            if(prime)
-                {
-                    Console.WriteLine("prostoe");
+                    Console.WriteLine("the number" + enterSingle + "is prime"); // вывод результата на консоль
                 }
                 else
                 {
-                    Console.WriteLine("ne prostoe");
-                }
-                
-            }
+                    Console.WriteLine("the number" + enterSingle + "isn't prime");
 
+                }
+            }
+            Console.ReadKey();
         }
-        Console.Readkey();
     }
-    
-    
+
+
 }
